@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracey Education Marketing | Local SEO for Education & Family Services</title>
+    <meta name="description" content="Local SEO services built specifically for tutoring centers, preschools, language schools, and family service businesses. Get found when families search.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; color: #2C3E50; background: #fff; }
+        a { text-decoration: none; }
+
+        /* Nav */
+        .nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); z-index: 100; border-bottom: 1px solid #f0f0f0; }
+        .nav-inner { max-width: 1000px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand b { color: #1A3C4D; font-size: 18px; }
+        .nav-brand span { color: #999; font-weight: 300; font-size: 18px; }
+        .nav-cta { background: #E74C3C; color: #fff; padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; transition: transform 0.2s; }
+        .nav-cta:hover { transform: scale(1.05); }
+
+        /* Hero */
+        .hero { padding: 140px 24px 80px; background: linear-gradient(135deg, #1A3C4D 0%, #2C5F6E 100%); }
+        .hero-inner { max-width: 1000px; margin: 0 auto; }
+        .hero-label { color: #5DADE2; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .hero h1 { color: #fff; font-size: 44px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; max-width: 600px; }
+        .hero h1 em { font-style: normal; color: #F1C40F; }
+        .hero p { color: #b0c4cc; font-size: 17px; line-height: 1.7; margin-bottom: 32px; max-width: 560px; }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary { background: #E74C3C; color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 16px; transition: transform 0.2s; display: inline-block; }
+        .btn-primary:hover { transform: scale(1.05); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 600; font-size: 16px; display: inline-block; }
+        .hero-stats { display: flex; gap: 48px; margin-top: 56px; }
+        .hero-stat b { color: #F1C40F; font-size: 24px; display: block; }
+        .hero-stat span { color: #7f9ca8; font-size: 12px; }
+
+        /* Section base */
+        .section { padding: 80px 24px; }
+        .section-inner { max-width: 1000px; margin: 0 auto; }
+        .section-gray { background: #f8f9fa; }
+        .section-dark { background: #1A3C4D; }
+        .section-title { font-size: 30px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #1A3C4D; }
+        .section-sub { text-align: center; color: #888; margin-bottom: 48px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+        /* Problem */
+        .problem-text { max-width: 640px; margin: 0 auto; text-align: center; }
+        .problem-text h2 { font-size: 28px; font-weight: 700; color: #1A3C4D; margin-bottom: 16px; }
+        .problem-text p { color: #666; line-height: 1.7; }
+
+        /* Services grid */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .service-card { padding: 36px; border-radius: 16px; border: 1px solid #f0f0f0; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.03); }
+        .service-card .icon { font-size: 32px; margin-bottom: 16px; }
+        .service-card h3 { font-size: 17px; font-weight: 700; color: #1A3C4D; margin-bottom: 12px; }
+        .service-card p { color: #888; font-size: 14px; line-height: 1.6; }
+
+        /* Clients grid */
+        .clients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .client-tag { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); padding: 12px 16px; border-radius: 12px; text-align: center; color: #fff; font-size: 14px; font-weight: 500; }
+        .section-dark .section-title { color: #fff; }
+        .section-dark .section-sub { color: #7f9ca8; }
+
+        /* Steps */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .step-num { font-size: 56px; font-weight: 800; color: #E8F4F8; }
+        .step h3 { font-size: 20px; font-weight: 700; color: #1A3C4D; margin: 8px 0 12px; }
+        .step p { color: #888; font-size: 14px; line-height: 1.6; }
+
+        /* Pricing */
+        .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 720px; margin: 0 auto; }
+        .price-card { padding: 36px; border-radius: 16px; text-align: center; }
+        .price-card.light { border: 2px solid #f0f0f0; background: #fff; }
+        .price-card.dark { background: #1A3C4D; color: #fff; position: relative; overflow: hidden; }
+        .price-badge { position: absolute; top: 0; right: 0; background: #E74C3C; color: #fff; font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 0 0 0 12px; }
+        .price-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 8px; }
+        .price-card.dark .price-label { color: #5DADE2; }
+        .price-amount { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+        .price-amount span { font-size: 16px; font-weight: 400; color: #999; }
+        .price-period { font-size: 14px; color: #999; margin-bottom: 24px; }
+        .price-list { text-align: left; font-size: 14px; line-height: 2; }
+        .price-card.light .price-list { color: #666; }
+        .price-card.dark .price-list { color: #b0c4cc; }
+        .price-note { text-align: center; color: #aaa; font-size: 14px; margin-top: 32px; }
+
+        /* FAQ */
+        .faq-list { max-width: 680px; margin: 0 auto; }
+        .faq-item { background: #fff; border: 1px solid #f0f0f0; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .faq-q { padding: 18px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 14px; color: #1A3C4D; }
+        .faq-q:hover { background: #fafafa; }
+        .faq-toggle { font-size: 20px; color: #ccc; }
+        .faq-a { padding: 0 24px 18px; font-size: 14px; color: #888; line-height: 1.6; display: none; }
+        .faq-item.open .faq-a { display: block; }
+
+        /* About */
+        .about-text { max-width: 640px; margin: 0 auto; text-align: center; }
+        .about-text p { color: #666; line-height: 1.7; margin-bottom: 16px; }
+
+        /* CTA */
+        .cta { padding: 80px 24px; background: linear-gradient(135deg, #1A3C4D 0%, #2C5F6E 100%); text-align: center; }
+        .cta h2 { color: #fff; font-size: 34px; font-weight: 700; margin-bottom: 16px; }
+        .cta p { color: #93b1bd; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-email { color: #7f9ca8; font-size: 14px; margin-top: 24px; }
+
+        /* Footer */
+        .footer { padding: 24px; border-top: 1px solid #f0f0f0; background: #f8f9fa; display: flex; justify-content: space-between; align-items: center; max-width: 100%; }
+        .footer-inner { max-width: 1000px; margin: 0 auto; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand b { color: #1A3C4D; font-size: 14px; }
+        .footer-brand span { color: #aaa; font-weight: 300; font-size: 14px; }
+        .footer-note { color: #aaa; font-size: 12px; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 15px; }
+            .services-grid, .steps-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .clients-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-stats { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-brand"><b>Tracey</b> <span>Education Marketing</span></div>
+        <a href="#contact" class="nav-cta">Free Audit</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <p class="hero-label">Local SEO for Education & Family Services</p>
+        <h1>Families are searching for your services right now. <em>Can they find you?</em></h1>
+        <p>Most education businesses are invisible on Google. I fix that. Full Google Business Profile optimization, local SEO, and content strategy &mdash; built specifically for schools, tutoring centers, and family service businesses.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary">Get Your Free Audit</a>
+            <a href="#how" class="btn-outline">How It Works</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><b>28</b><span>Audit Checkpoints</span></div>
+            <div class="hero-stat"><b>10-20</b><span>Keywords Targeted</span></div>
+            <div class="hero-stat"><b>3-5x</b><span>Traffic Increase</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Problem -->
+<section class="section section-gray">
+    <div class="section-inner problem-text">
+        <h2>The problem isn't your services. It's your visibility.</h2>
+        <p>You run a great program. But when a parent searches "tutoring near me" or "preschool in your city," your competitor shows up first &mdash; not because they're better, but because their Google presence is. Agencies charge $2,000&ndash;$5,000/month to fix this. I do it for a fraction of that.</p>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="section">
+    <div class="section-inner">
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-sub">Everything your business needs to dominate local search &mdash; nothing it doesn't.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">&#128269;</div>
+                <h3>Google Business Profile</h3>
+                <p>Get found when families search. Full optimization, weekly posts, FAQ management, and review strategy.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#128196;</div>
+                <h3>Website & Local SEO</h3>
+                <p>Service area pages, keyword targeting, schema markup, and technical fixes that move you up in search results.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#128200;</div>
+                <h3>Content & Reporting</h3>
+                <p>Monthly blog posts, competitor tracking, and clear reports showing your rankings, traffic, and leads.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Who I Help -->
+<section class="section section-dark">
+    <div class="section-inner">
+        <h2 class="section-title">Who I Work With</h2>
+        <p class="section-sub">If families need to find you, I can help you get found.</p>
+        <div class="clients-grid">
+            <div class="client-tag">Tutoring Centers</div>
+            <div class="client-tag">Preschools & Daycares</div>
+            <div class="client-tag">Test Prep Companies</div>
+            <div class="client-tag">Music & Dance Schools</div>
+            <div class="client-tag">Speech & Language Therapy</div>
+            <div class="client-tag">After-School Programs</div>
+            <div class="client-tag">Language Schools & ESL</div>
+            <div class="client-tag">Martial Arts Studios</div>
+            <div class="client-tag">Private Schools</div>
+            <div class="client-tag">Immigration Services</div>
+            <div class="client-tag">Trade Schools</div>
+            <div class="client-tag">Driving Schools</div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section id="how" class="section section-gray">
+    <div class="section-inner">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-num">01</div>
+                <h3>Free Audit</h3>
+                <p>I review your Google presence across 28 checkpoints and show you exactly where you stand vs. competitors.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <h3>Build the Foundation</h3>
+                <p>Month 1: I optimize your Google Business Profile, fix your website SEO, and build service area pages.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <h3>Grow Monthly</h3>
+                <p>Ongoing content, review management, and reporting. You focus on running your business while leads come in.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="section">
+    <div class="section-inner">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-sub">No long-term contracts. No hidden fees. Cancel anytime.</p>
+        <div class="pricing-grid">
+            <div class="price-card light">
+                <div class="price-label">Setup</div>
+                <div class="price-amount" style="color:#1A3C4D">$750 <span>- $1,000</span></div>
+                <div class="price-period">One-time foundation build</div>
+                <div class="price-list">
+                    <p>Full Google Business Profile optimization</p>
+                    <p>Website SEO audit and fixes</p>
+                    <p>5-8 service area pages built</p>
+                    <p>Search Console and Analytics setup</p>
+                    <p>First month of Google Posts</p>
+                </div>
+            </div>
+            <div class="price-card dark">
+                <div class="price-badge">MOST POPULAR</div>
+                <div class="price-label">Monthly</div>
+                <div class="price-amount">$500 <span>- $750</span></div>
+                <div class="price-period">Per month, cancel anytime</div>
+                <div class="price-list">
+                    <p>4 new SEO blog posts / pages per month</p>
+                    <p>Weekly Google Business Profile posts</p>
+                    <p>Review management and reply templates</p>
+                    <p>Monthly ranking and traffic report</p>
+                    <p>Competitor monitoring</p>
+                </div>
+            </div>
+        </div>
+        <p class="price-note">Agencies charge $2,000 - $5,000/month for the same work.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray">
+    <div class="section-inner">
+        <h2 class="section-title">Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How is this different from a regular marketing agency?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">I only work with education and family service businesses. I understand your enrollment cycles, how parents search, and what makes families choose one program over another. Generalist agencies treat you like every other client.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How long until I see results?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">Google Business Profile improvements often show within 2-4 weeks. Website ranking improvements typically take 2-3 months for initial results, with significant gains by month 4-6.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>What do I need to get started?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">Just access to your Google Business Profile and website. If you don't have either, I can help set them up. The free audit requires nothing from you at all.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Is there a long-term contract?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">No. Month-to-month, cancel anytime. I keep clients by delivering results, not by locking them in.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section">
+    <div class="section-inner about-text">
+        <h2 class="section-title">Why Me?</h2>
+        <p>I'm an educator, not a marketing agency. I understand how families search for programs, how enrollment decisions get made, and what parents actually care about when choosing services for their kids.</p>
+        <p>I use AI tools to work 10x faster than traditional agencies &mdash; and I pass those savings directly to you. You get agency-quality SEO at a fraction of the cost, with direct access to the person doing the work.</p>
+        <p>No account managers. No runaround. Just results.</p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+    <h2>Get your free 28-point audit</h2>
+    <p>I'll review your Google Business Profile, website, and local search presence &mdash; and show you exactly what's costing you leads. No charge, no obligation.</p>
+    <a href="mailto:tracey@traceyeducationmarketing.com?subject=Free%20SEO%20Audit%20Request" class="btn-primary" style="font-size:18px; padding: 16px 40px;">Request Your Free Audit</a>
+    <p class="cta-email">tracey@traceyeducationmarketing.com</p>
+</section>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand"><b>Tracey</b> <span>Education Marketing</span></div>
+        <span class="footer-note">Local SEO for education & family services</span>
+    </div>
+</div>
+
+</body>
+</html>
